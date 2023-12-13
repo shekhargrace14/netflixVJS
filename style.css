@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+:root{
+    --primary-color: #e50914;
+    --primary-color-dark: #9f0d14;
+    --bg-dark-primary: #000000;
+    --bg-dark-secondary: #121212;
+    --bg-gray: #171717;
+    --bg-gray-hover:#282828;
+    --font-primary: 'Robot', sans-serif;
+}
+
+body{
+    background-color: var(--bg-dark-primary);
+}
+
+/* global css starts here  */
+a{
+    text-decoration: none;
+}
+button{
+    background-color: white;
+    color: black;
+    padding: .6rem 1.2rem;
+    border-radius: .3rem;
+    margin-left: 1rem;
+    cursor: pointer;
+    transition: all ease-in-out 200ms;
+    font-size: 1.1rem;
+}
+.btn-secondary{
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+}
+.btn-primary{
+    background-color: var(--primary-color);
+    color: white;
+    
+}
+h1 h2 h3 h4 h5 h6{
+    line-height: 2.5rem;
+    font-family: var(--font-primary);
+}
+h2{
+    font-size: 18px;
+    margin: 1rem 0;
+}
+h4{
+    font-size: 18px;
+    margin: .5rem 0;
+}
+p{
+    line-height: 2.5rem;
+    font-family: var(--font-primary);
+
+}
+.container{
+    width: 80%;
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+.row{
+    width: 100%;
+}
+.parent{
+    width: 99%;
+    margin: 1rem auto;
+}
+
+.d-flex{
+    display: flex;
+    
+}
+.justify-between{
+    justify-content: space-between;
+}
+.justify-start{
+    justify-content: start;
+}
+.align-center{
+    align-items: center;
+}
+.align-start{
+    align-items: start;
+}
+.direction-column{
+    flex-direction: column;
+}
+.align-content{
+    align-content: space-between ;
+
+}
+/* global css ends here  */
+
+/* hero start here  */
+.hero{
+    width: 100%;
+    background-image: linear-gradient( rgba(0,0,0,.7),rgba(0,0,0,.7)), url(./Assets/welcome-hero.jpg);
+
+}
+
+.navBar{
+    margin-top:1rem ;
+}
+
+.logo{
+    width: 20%;
+}
+
+.logo img{
+    width: 60%;
+}
+
+.banner{
+    width: 100%;
+    height: 75vh;
+}
+
+.banner .column{
+    width: 100%;
+    text-align: center;
+    /* background-color: red; */
+    
+}
+
+/* hero ends here  */
