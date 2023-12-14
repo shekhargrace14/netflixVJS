@@ -60,15 +60,15 @@ button{
 h1, h2, h3, h4, h5, h6{
     line-height: 2.5rem;
     font-family: var(--font-primary);
+    font-weight: 800;
 }
 h1{
     font-size: 3rem;
     line-height: 3.5rem;
-    font-weight: 800;
 
 }
 h2{
-    font-size: 18px;
+    font-size: 3rem;
     margin: 1rem 0;
 }
 h4{
@@ -77,8 +77,13 @@ h4{
 }
 p{
     font-size: 18px;
-    line-height: 2.5rem;
     font-family: var(--font-primary);
+    line-height: 2.5rem;
+    
+}
+.subTitle{
+    font-size: 24px;
+    line-height: 2rem;
 
 }
 .container{
@@ -104,6 +109,9 @@ p{
 }
 .justify-start{
     justify-content: start;
+}
+.justify-center{
+    justify-content: center;
 }
 .align-center{
     align-items: center;
@@ -191,3 +199,29 @@ p{
 }
 
 /* hero ends here  */
+
+/* text-media start here  */
+.text-media{
+    padding: 3.8rem 0;
+    /* background-color: #9f0d14; */
+}
+
+.text-media .column{
+    width: 50%;
+    /* background-color: yellow; */
+}
+
+.text-media .imgCol{
+    position: relative;
+}
+
+.text-media img{
+    width: 100%;
+    position: absolute;
+}
+.text-media video{
+    width: 80%;
+    
+}
+/* text-media ends here  */
+
