@@ -1,0 +1,38 @@
+@media  screen and (min-width:1024px){
+    .container{
+        width: 1280px;
+
+    }
+}
+@media  screen and (max-width:1024px){
+    .container{
+        width: 95%;
+
+    }
+}
+
+
+
+
+@media  screen and (max-width:769px){
+
+    .marginTop{
+        margin-top: 3%;
+    }
+    .marginBottom{
+        margin-bottom: 3%;
+    }
+
+    .d-flex{
+       flex-direction: column;
+        
+    }
+    .row{
+        /* background-color: green; */
+    }
+    .column{
+        width: 100%;
+        /* background-color: red; */
+        text-align: center;
+    }
+}
