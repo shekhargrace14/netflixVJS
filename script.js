@@ -2,5 +2,11 @@ let faqQue = document.getElementById("faqQue")
 let faqAns = document.getElementById("faqAns") 
 
 
-const faq = fetch("./faq")
-.then()
+fetch("faq.json")
+  .then(response=> response.json())
+  .then(data=>{ 
+    console.log(data); 
+    for(let i in data){
+        console.log(i)
+    }
+})      

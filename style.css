@@ -65,9 +65,10 @@ h1, h2, h3, h4, h5, h6{
 h1{
     font-size: 3rem;
     line-height: 3.5rem;
-
+    
 }
 h2{
+    line-height: 3.5rem;
     font-size: 3rem;
     margin: 1rem 0;
 }
@@ -138,6 +139,12 @@ p{
     height: .5rem;
     background-color: var(--bg-gray-hover);
 }
+
+.padding{
+    /* background-color: #9f0d14; */
+    padding: 4% 0;
+}
+
 /* global css ends here  */
 
 /* hero start here  */
@@ -214,10 +221,7 @@ p{
 
 /* text-media start here  */
 
-.text-media{
-    /* background-color: #9f0d14; */
-    padding: 10% 0;
-}
+
 
 .text-media .column{
     width: 50%;
@@ -239,6 +243,12 @@ p{
 .text-media video{
     position: absolute;
     width: 80%;
+    
+}
+.text-media .video3{
+    /* position: absolute; */
+    top: 5%;
+    width: 65%;
     
 }
 /* text-media ends here  */

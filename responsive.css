@@ -15,7 +15,14 @@
 
 
 @media  screen and (max-width:769px){
+    .container{
+        width: 80%;
 
+    }
+    .padding{
+        /* background-color: #9f0d14; */
+        padding: 8% 0;
+    }
     .marginTop{
         margin-top: 3%;
     }
@@ -34,5 +41,9 @@
         width: 100%;
         /* background-color: red; */
         text-align: center;
+    }
+
+    .text-media .column{
+        width: 100%;
     }
 }
