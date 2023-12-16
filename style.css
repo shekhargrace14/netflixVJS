@@ -228,26 +228,25 @@ p{
 
 .text-media .column{
     width: 50%;
-}
-
-.text-media .imgCol{
-
     position: relative;
-    /* width: 70%; */
-    /* background-color: yellow; */
-
 }
+
 
 .text-media img{
-    /* position: absolute; */
+
     width: 100%;
-    z-index: 1;
+    /* z-index: 1; */
 }
 .text-media video{
     position: absolute;
-    width: 80%;
+    top: 20%;
+    width: 74%;
+  
     
 }
+
+
+
 .text-media .video3{
     /* position: absolute; */
     top: 5%;
