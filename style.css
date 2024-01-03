@@ -290,8 +290,9 @@ p{
 }
 
 .active{
-    position: static;
-    opacity: 1;
+    position: static !important;
+    opacity: 1 !important;
+    background-color: #e50914;
 
 }
 

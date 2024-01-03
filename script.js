@@ -1,23 +1,20 @@
-alert("hello")
 
-var que = document.querySelector(".que")
-var ans = document.querySelector(".ans")
-var icon = document.querySelector("ion-icon")
+let faqrow = document.querySelector(".faqrow")
+let que =  document.querySelector(".que")
+let icon = document.querySelector("ion-icon")
+let ans = document.querySelector(".ans")
 
-var flag = 1;
-que.addEventListener("click",function(){
-if(flag ===1 ){
-  icon.style.backgroundColor = "red";
-  flag = 0
-  icon.style.transform = "rotate(135deg)";
-}else{
-  icon.style.transform = "rotate(0)";
-  flag = 1
-}
-  // ans.classList.toggle("active")
+
+flag = 0;
+faqrow.addEventListener("click", function(){
+  console.log("hello")
+  if(flag === 0 ){
+    ans.style.backgroundColor = "red !important";
+    flag = 1
+    icon.style.transform = "rotate(135deg)";
+  }else{
+    icon.style.transform = "rotate(0)";
+    flag = 0
+  }
+    ans.classList.toggle("active")
 })
-
-
-
-
-// console.log(flag)
