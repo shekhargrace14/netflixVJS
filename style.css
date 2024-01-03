@@ -72,6 +72,10 @@ h2{
     font-size: 3rem;
     margin: 1rem 0;
 }
+h3{
+    font-size: 1.5rem;
+    line-height: 3.5rem;
+}
 h4{
     font-size: 18px;
     margin: .5rem 0;
@@ -96,9 +100,7 @@ p{
     width: 100%;
 }
 
-.title .column{
-    /* width: 100%; */
-    /* background-color: red; */
+.title{
     text-align: center;
 }
 .parent{
@@ -255,53 +257,42 @@ p{
 }
 /* text-media ends here  */
 
+/* faq starts here  */
+
 .faq{
-    background-color: red;
-    width: 100%;
-}
 
-
-.faq #faqrow{
-    background-color: var(--bg-gray-hover);
-    padding: 1rem;
-    margin:  0 0 1px;
 }
-.faq #faqAns{
-    background-color: var(--bg-gray-hover);
-    padding: 1rem;
-}
-
-.faq span{
-    display: block;
-    background-color: green;
-    width: 3rem;
-    height: .3rem;
-    margin: .3rem;
-}
-.faq .icon{
+.faqrow{
     position: relative;
-    background-color: green;
-    /* margin: 1rem; */
-    padding: 1rem;
-
 }
-.faq .top {
-    background-color: red;
-    transform: rotate(45deg);
+.faq .que{
+    background-color: var(--bg-gray-hover);
+    padding: 1rem 2rem;
+    margin: 0 0 0.1rem;
+    z-index: 1;
+    
+}
+
+.faq .ans{
+    background-color: var(--bg-gray-hover);
+    padding: 1rem 2rem;
     position: absolute;
-    right: 0;
-    top: 0;
+    bottom: 0;
+    z-index: 0;
+    opacity: 0;
 
-}
-.faq .bottom {
-    background-color: red;
-    transform: rotate(135deg);
-    position: absolute;
-    top: 0;
-    right: 0;
-
+    
 }
 
-.hello{
-    width: 5rem;
+.faq  ion-icon{
+    font-size: 2.5rem;
+    transition: all linear .2s;
 }
+
+.active{
+    position: static;
+    opacity: 1;
+
+}
+
+/* faq ends here  */
