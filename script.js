@@ -1,20 +1,21 @@
 
-let faqrow = document.querySelector(".faqrow")
-let que =  document.querySelector(".que")
-let icon = document.querySelector("ion-icon")
-let ans = document.querySelector(".ans")
+let faqrow = document.querySelectorAll(".faqrow")
+let que =  document.querySelectorAll(".que")
+let icon = document.querySelectorAll("ion-icon")
+// let ans = document.querySelectorAll(".ans")
 
 
-flag = 0;
-faqrow.addEventListener("click", function(){
-  console.log("hello")
-  if(flag === 0 ){
-    ans.style.backgroundColor = "red !important";
-    flag = 1
-    icon.style.transform = "rotate(135deg)";
-  }else{
-    icon.style.transform = "rotate(0)";
-    flag = 0
-  }
+// flag = 0;
+
+faqrow.forEach((faq, i)=>{
+
+
+  faq.addEventListener("click", function(){
+    console.log("hello")
+    let ans = faq.firstElementChild.nextElementSibling;
+    console.log(ans);
+    icon[i].classList.toggle("iconRotate");
+
     ans.classList.toggle("active")
+  })
 })
