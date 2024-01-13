@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google-site-verification" content="gS17cq-7pwCta38y0RcLH-M3hsyMYSmLRuVNT_sQaUI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../responsive.css">
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <style>
+        header .left{
+            width: 60%;
+        }
+        header .column{
+            width: 30%;  
+        }
+        header .logo img{
+            width: 150px;
+            /* background-color: red !important; */
+            
+        }
+        .navigation{
+            /* background-color: green; */
+        }
+        
+        .navigation li{
+            padding: 0 1rem ;
+        }
+        .navigation li a{
+            color:white !important;
+        }
+        header .search{
+            /* background-color: yellow; */
+            /* padding: 10rem; */
+        }
+
+    </style>
+
+</head>
+<body>
+    <header class="container">
+        <div class="row d-flex align-center justify-between navBar">
+            <div class="d-flex left align-center">
+
+                <div class="column">
+                    <div class="logo">
+                        <a href="./home.html">
+                            <img src="../Assets/logo.png" alt="logo">
+                        </a>
+                    </div>
+                </div>
+                <div class="column navigation">
+                    <ul class="d-flex">
+                        <li><a href="./home.html">Home</a></li>
+                        <li><a href="./home.html">Home</a></li>
+                        <li><a href="./home.html">Home</a></li>
+                        <li><a href="./home.html">Home</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="column d-flex search">
+                <input id="input" type="text" placeholder="Enter movie name">
+                <input id="submit" class="btn-primary" type="submit" value="search">
+            </div>
+
+        </div>
+    </header>
+    <div class="container-fluid heroHome">
+        <div class="row main d-flex align-center">
+            
+            <div class="column " >
+                <h1>hello </h1>
+                <h3>Watch in Tamil, Telugu, Kannada, Malayalam,Hindi</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit iusto nam dolor tempora eaque porro ullam sit deserunt nisi facilis ut quas nulla, id animi!  </p>
+            </div>
+        </div>
+        <div class="row bg">
+            <div class="column">
+                <img src="../Assets/welcome-hero.jpg" alt="">
+
+            </div>
+        </div>
+    </div>
+    <script src="../home.js"></script>
+</body>
+</html>
