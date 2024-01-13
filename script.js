@@ -8,11 +8,8 @@ let ans = document.querySelectorAll(".ans")
 async function fetchData(){
   const response = await fetch('faq.json')
   const data = await response.json();
-
   console.log(data)
-
   return data;
-
 }
 
 fetchData();
