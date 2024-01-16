@@ -405,8 +405,10 @@ ion-icon{
 
 /* membership ends here  */
 
+/* footer starts here  */
+
 footer{
-    padding: 5% 0;
+    padding: 5%;
 }
 footer p{
     margin-bottom: 1.5rem;
@@ -419,6 +421,9 @@ footer li{
     margin-bottom: 1rem;
 
 }
+
+/* footer ends here  */
+
 
 /* .signinForm start here  */
 .signinForm{

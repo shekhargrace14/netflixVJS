@@ -47,16 +47,22 @@
             /* padding: 10rem; */
         }
 
+        .mainBox{
+            height: 60vh;
+        }
+        .mainBox .column{
+            width: 50%;
+        }
+
     </style>
 
 </head>
 <body>
-
     <div class="hero">
         <div class="container">
             <div class="row d-flex justify-between navBar   ">
                 <div class="column logo">
-                    <a href="index.html">
+                    <a href="../index.html">
                         <img src="../Assets/logo.png" alt="">
                     </a>
                 </div>
@@ -68,7 +74,10 @@
                         <li><a href="./home.html">My List   </a></li>
                     </ul>
                 </div>
+
                 <div class="column">
+                    <input id="input" type="text" placeholder="Search">
+                    <input id="submit" type="submit" class="btn-primary">
                     <button class="btn-secondary">English</button>
                     <a href="./pages/singin.html">
                         <button class="btn-primary">Sign in</button>
@@ -76,13 +85,34 @@
                 </div>
             </div>
 
-            <div class="row d-flex align-center">
+            <div class="row mainBox d-flex align-center">
             
                 <div class="column " >
                     <h1>hello </h1>
                     <h3>Watch in Tamil, Telugu, Kannada, Malayalam,Hindi</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit iusto nam dolor tempora eaque porro ullam sit deserunt nisi facilis ut quas nulla, id animi!  </p>
                 </div>
+                <div class="column">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="column">
+                <h2>Latest on Netflix</h2>
+            </div>
+        </div>
+        <div class="row latestRow">
+            <div class="column">
+                <div class="poster">
+                    <img src="../Assets/logo.png" alt="">
+                </div>
+            </div>
+            <div class="column">
+                
             </div>
         </div>
     </div>
