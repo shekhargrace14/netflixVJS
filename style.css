@@ -162,6 +162,9 @@ ion-icon{
 .direction-column{
     flex-direction: column;
 }
+.direction-row{
+    flex-direction: row;
+}
 .align-content{
     align-content: space-between ;
 
