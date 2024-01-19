@@ -52,7 +52,10 @@
         }
 
         .heroCarousel{
-            width: 100%;
+            display: flex;
+            /* width: 100%; */
+            flex-wrap: wrap;
+            
 
             
 
@@ -60,15 +63,23 @@
         .heroCarousel .row{
             width: 100%;
             border: 2px solid yellow;
+            height: 80vh;
+        }
+        .heroCarousel .content-Box{
+            width: 50%;
         }
 
         .homeHeroBG{
-            /* top: 0;             */
-            /* position: absolute; */
-            /* z-index: -1; */
+            top: 0;            
+            position: absolute;
+            z-index: -1;
+        }
+        .homeHeroBG{
+            height: 80vh;
         }
         .homeHeroBG img{
             width: 100%;
+            height: 80vh;
         }
     </style>
 </head>

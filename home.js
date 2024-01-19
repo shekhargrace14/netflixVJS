@@ -95,17 +95,17 @@ fetch("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_
     data.results.map((value)=>{        
         heroCarousel.insertAdjacentHTML("beforeend",`
         <div class="row">
-            <div class="innerRow">
-                <div class="column" >
+            <div class="innerRow d-flex content-Box">
+                <div class="column info" >
                     <h4>${value.original_title}</h4>
                     <p>${value.overview}</p>
                 </div>
                 <div class="column " >
-                    <h1>Hello</h1>
+        
                 </div>
             </div>
             <div class="innerRow homeHeroBG">
-                <div class="column ">
+                <div class="">
                     <img src="https://image.tmdb.org/t/p/w500${value.backdrop_path}"   alt="">
                 </div>
             </div>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <style>
+        .row{
+            display: flex;
+            position: relative;
+            width: 100%;
+        }
+        .slide{
+            /* display: none; */
+        }
+
+
+        
+        .arrow{
+            cursor: pointer;
+            position: absolute;
+            top: 45%;
+            color:black;
+            background-color: rgba(255, 255, 255, 0.767);
+            padding: 8px 18px;
+            border-radius: 50%;
+            font-size: 25px;
+            font-weight: bold;
+        }
+        .next{
+            right: 10px;
+        
+        }
+        .prev{
+            left:10px;
+        }
+        .caption{
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.712);
+            padding: 15px 0px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="column slide">
+                <img src="./Assets/img4.png" alt="">
+                <div class="caption">
+                    Caption Text 1
+                </div>
+            </div>
+            <div class="column slide">
+                <img src="./Assets/img4.png" alt="">
+                <div class="caption">
+                    Caption Text 2
+                </div>
+            </div>
+            <div class="column slide">
+                <img src="./Assets/img4.png" alt="">
+                <div class="caption">
+                    Caption Text 3
+                </div>
+            </div>
+            <div class="column slide">
+                <img src="./Assets/img4.png" alt="">
+                <div class="caption">
+                    Caption Text 4
+                </div>
+            </div>
+            <div class="column slide">
+                <img src="./Assets/img4.png" alt="">
+                <div class="caption">
+                    Caption Text 5
+                </div>
+            </div>
+            <span class="arrow prev" onclick="controller(-1)">&#10094;</span>
+            <span class="arrow next" onclick="controller(+1)">&#10095;</span>
+        </div>
+    </div>
+    <script>
+        let flag = 0;
+
+        function controller(x){
+            flag = flag + x;
+            slidershow(flag)
+        }
+        slidershow(flag)
+
+        function slidershow(num){
+            let slides = document.querySelectorAll('.slide')
+           
+            if(num == slides.length){
+                flag=0;
+                num= 0;
+            }
+
+            if(num<0){
+                flag = slides.length-1;
+                num = slides.length-1;
+            }
+
+            for(let y of slides){
+                y.style.display = "none";            
+            }
+
+            slides[num].style.display = "block";
+
+            console.log(slides.length ,"slide length")
+            console.log(flag)
+            // return num
+        }
+
+
+
+    </script>
+</body>
+</html>
