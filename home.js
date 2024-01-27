@@ -6,113 +6,99 @@
 
 
 
-
-// async function apiData(query="money"){
-//     const resolve = await fetch(`https://api.themoviedb.org/3/search/movie?query=${query}&api_key=185c7d1fa7ff15b5023522fae491e666`);
-//     const data = await  resolve.json();
-//     console.log(data)
-//     return data; 
-// }
-// apiData();
-// var newValue = '';
-
-// submitInput.addEventListener('click', function(){
-//     var value = input.value   
-//     newValue = value;
-//     console.log("hello", value)   
-// })
-
-// console.log("newValue", newValue)
-
-
-
-
-
-// async function rowdata() {
-//     const data = await apiData();
-//     // console.log(data)
-
-  
-//     const latestRow = document.querySelector(".latestRow")
-
-//     data.results.map((value)=>{
-//     latestRow.insertAdjacentHTML(
-//         "beforebegin",
-//         `<div class="row">
-//         <div class="column">
-//         <div class="poster">
-//             <h3>${value.title}</h3>
-//         <img src=${value.poster_path} alt="">
-//         </div>
-//         </div>
-//         </div>`
-//         )
-//     })
-
-
-// }
-// rowdata()
-
-// let input = document.querySelector("#input");
-// let submitInput = document.querySelector("#submit");
-
-// submitInput.addEventListener('click', function(){
-//     var value = input.value;   
-//     console.log(value)
-
-
-//     fetch(`${URL}?query=${value}&api_key=${API}`)
-//     .then((resolve)=>resolve.json())
-//     .then((data)=>{
-//     console.log(data)
-    
-//         const latestRow = document.querySelector(".latestRow");
-//         data.results.map((value)=>{
-//             latestRow.insertAdjacentHTML("beforebegin",`
-//                 <div class="row">
-//                 <div class="column">
-//                 <div class="poster">
-//                 <h3>${value.title}</h3>
-//                 <img src=${value.poster_path} alt="">
-//                 </div>
-//                 </div>
-//                 </div>
-//             `)
-//         })
-//     })
-//     value = " ";
-//     console.log(value)
-// })
-
-
-
-
-
 fetch("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_key=185c7d1fa7ff15b5023522fae491e666")
 .then((response)=>response.json()).then((data)=> {
-    console.log(data)
-    const heroCarousel = document.querySelector(".heroCarousel");
+    // console.log(data)
+    const heroSlider = document.querySelector(".heroSlider");
     data.results.map((value)=>{        
-        heroCarousel.insertAdjacentHTML("beforeend",`
-        <div class="row">
-            <div class="innerRow d-flex content-Box">
-                <div class="column info" >
-                    <h4>${value.original_title}</h4>
+        heroSlider.insertAdjacentHTML("beforeend",`
+        <div class="column ">
+            <div class="info d-flex align-center" >
+                <div class="info-box">
+                    <h1>${value.original_title}</h1>
                     <p>${value.overview}</p>
-                </div>
-                <div class="column " >
-        
+                    
+                    <div class="buttons">
+                        <button> <i class="fa-solid fa-play"></i> Play </button>
+                        <button class="gray"> <i class="fa-solid fa-circle-info"></i> Movie Info</button>
+               
+                    </div>
                 </div>
             </div>
-            <div class="innerRow homeHeroBG">
-                <div class="">
-                    <img src="https://image.tmdb.org/t/p/w500${value.backdrop_path}"   alt="">
-                </div>
+            <div class="bg" >
+
+                <img src="https://image.tmdb.org/t/p/w500${value.backdrop_path}"   alt="">
+
             </div>
         </div>
-        
     `)
     })
-    console.log(heroCarousel)
+    // console.log(heroCarousel)
+
+const track = document.querySelector('.heroSlider');
+const slides = Array.from(track.children)
+const firstSlide = slides[0]
+// const nextButton = document.querySelector('.next')
+// const prevButton = document.querySelector('.prev')
+const slideWidth = slides[0].getBoundingClientRect().width;
+
+console.log(firstSlide, 'this is first slide')
+
+window.addEventListener("load", () => {
+    firstSlide.classList.add('current-slide');
+
+    
+    
+});
+
+// arrange slides next to each other 
+
+// slides[0].style.left = slideWidth * 0 + 'px';
+// slides[1].style.left = slideWidth * 1 + 'px';
+// slides[2].style.left = slideWidth * 2 + 'px';
+
+slides.forEach((slide, index)=>{
+    slide.style.left = slideWidth * index + 'px';
+
+}) 
+
+// prevButton.addEventListener('click', e =>{
+//     const currentSlide = track.querySelector('.current-slide');
+//     const prevSlide = currentSlide.previousElementSibling;
+//     const amountToMove = prevSlide.style.left
+//     console.log(amountToMove, "hello form prev")
+
+//     track.style.transform = 'translateX(-'+amountToMove+')';
+//     currentSlide.classList.remove('current-slide')
+//     prevSlide.classList.add('current-slide')
+// })
+
+// nextButton.addEventListener('click', e =>{
+//     const currentSlide = track.querySelector('.current-slide');
+//     const nextSlide = currentSlide.nextElementSibling;
+//     const amountToMove = nextSlide.style.left
+//     // console.log(amountToMove, "hello form prev")
+
+//     track.style.transform = 'translateX(-'+amountToMove+')';
+//     currentSlide.classList.remove('current-slide')
+//     nextSlide.classList.add('current-slide')
+// })
+
+function autoSlide(){
+
+    const currentSlide = track.querySelector('.current-slide');
+    const nextSlide = currentSlide.nextElementSibling;
+    const amountToMove = nextSlide.style.left
+    // console.log(amountToMove, "hello form prev")
+    
+    track.style.transform = 'translateX(-'+amountToMove+')';
+    currentSlide.classList.remove('current-slide')
+    nextSlide.classList.add('current-slide')
+    
+}
+
+setInterval(autoSlide ,2500)
+
+
 
 })
