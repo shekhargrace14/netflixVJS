@@ -37,6 +37,7 @@ fetch("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_
 
 const track = document.querySelector('.heroSlider');
 const slides = Array.from(track.children)
+console.log(slides)
 const firstSlide = slides[0]
 // const nextButton = document.querySelector('.next')
 // const prevButton = document.querySelector('.prev')
