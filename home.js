@@ -7,7 +7,8 @@
 
 
 fetch("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_key=185c7d1fa7ff15b5023522fae491e666")
-.then((response)=>response.json()).then((data)=> {
+.then((response)=>response.json())
+.then((data)=> {
     // console.log(data)
     const heroSlider = document.querySelector(".heroSlider");
     data.results.map((value)=>{        
@@ -37,13 +38,13 @@ fetch("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_
 
 const track = document.querySelector('.heroSlider');
 const slides = Array.from(track.children)
-console.log(slides)
+// console.log(slides)
 const firstSlide = slides[0]
 // const nextButton = document.querySelector('.next')
 // const prevButton = document.querySelector('.prev')
 const slideWidth = slides[0].getBoundingClientRect().width;
 
-console.log(firstSlide, 'this is first slide')
+// console.log(firstSlide, 'this is first slide')
 
 window.addEventListener("load", () => {
     firstSlide.classList.add('current-slide');
@@ -103,3 +104,25 @@ setInterval(autoSlide ,2500)
 
 
 })
+
+// contentRow starts here 
+
+fetch("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_key=185c7d1fa7ff15b5023522fae491e666")
+.then(response => response.json())
+.then(data => {
+    console.log(data.results , "contentRow data");
+    const card = document.querySelector(".card-row")
+    console.log(card)  
+    
+    data.results.map((value, index)=>{
+        card.insertAdjacentHTML("beforeend",`
+            <div class="column card">
+
+                <img src="https://image.tmdb.org/t/p/w500${value.poster_path}" alt="">
+            </div>
+        `)
+    })  
+    console.log(card)  
+})
+
+// contentRow ends here 
