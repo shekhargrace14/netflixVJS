@@ -63,7 +63,16 @@
             height: 100%;
             object-fit: cover;
         }
-       
+        .treanding{
+            position: relative;
+            /* background-color: red; */
+        }
+        .treanding .carousel{
+            overflow: hidden;
+        }
+        .hideArrow{
+            display: none;
+        }
         .arrow{
             cursor: pointer;
             position: absolute;
@@ -96,47 +105,57 @@
 
         }
     </style>
-        <style>
-            .card-row{
-                /* width: 100%; */
-                display: grid;
-                grid-auto-flow: column;
-                grid-auto-columns: calc((100% / 6) - 12px);
-                gap: 8px;
-                /* background-color: yellow; */
-    
-            }
-            .card{
-                /* width: 500px; */
-                /* width: calc(100% /3); */
-                background-color: green;
-                /* width: 1000px; */
-            }
-            .card img{
-                width: 100%;
-                height: 100%;
-                object-fit:cover;
-    
-                
-            }
-        </style>
+    <style>
+        .card-row{
+            /* width: 100%; */
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: calc((100% / 6) - 12px);
+            gap: 8px;
+            /* background-color: yellow; */
+
+        }
+        .card{
+            /* width: 500px; */
+            /* width: calc(100% /3); */
+            background-color: green;
+            /* width: 1000px; */
+        }
+        .card img{
+            width: 100%;
+            height: 100%;
+            object-fit:cover;
+
+            
+        }
+    </style>
 </head>
 <body>  
     
     <div class="container-fluid home-hero"> 
         <header></header>
-        <!-- <span class="arrow prev" >&#10094;</span> -->
         <div class="row heroSlider"></div>  
-        <!-- <span class="arrow next" >&#10095;</span>   -->
     </div>
 
-    <div class="container padding">
-        <div class="row card-row">
-            <!-- <h2>hello from contentRow</h2> -->
+    <!-- treanding starts here  -->
+    <div class="treanding">
+        <div class="container padding">
+            <span id="left" class="arrow prev hideArrow" >&#10094;</span>
+            <div class="row card-row carousel">
+                <!-- <h2>hello from contentRow</h2> -->
+            </div>
+            <span id="right" class="arrow next" >&#10095;</span>  
         </div>
     </div>
-    <script src="./contentRowTMDB.js"></script>
+    <!-- treanding starts here  -->
 
+
+    <script src="./contentRowTMDB.js"></script>
+    
+    <a href="./singleMoviePage.html">
+
+        <button>SingleMoviePage</button>
+    </a>
     
 
     <footer></footer>

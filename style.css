@@ -122,9 +122,10 @@ ion-icon{
 
 }
 .container{
-    width: 80%;
+    width: 90%;
     border-radius: 10px;
     margin: 0 auto;
+
 }
 .row{
     width: 100%;
@@ -411,7 +412,7 @@ ion-icon{
 /* footer starts here  */
 
 footer{
-    padding: 5%;
+    /* padding: 5%; */
 }
 footer p{
     margin-bottom: 1.5rem;

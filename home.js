@@ -1,10 +1,3 @@
-// 185c7d1fa7ff15b5023522fae491e666
-
-// const URL = "https://api.themoviedb.org/3/search/movie";
-// const API = "185c7d1fa7ff15b5023522fae491e666";
-
-
-
 
 fetch("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_key=185c7d1fa7ff15b5023522fae491e666")
 .then((response)=>response.json())
@@ -105,24 +98,64 @@ setInterval(autoSlide ,2500)
 
 })
 
-// contentRow starts here 
+// treanding starts here 
 
 fetch("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_key=185c7d1fa7ff15b5023522fae491e666")
 .then(response => response.json())
 .then(data => {
-    console.log(data.results , "contentRow data");
+    // console.log(data.results , "contentRow data");
     const card = document.querySelector(".card-row")
-    console.log(card)  
+    // console.log(card)  
     
     data.results.map((value, index)=>{
         card.insertAdjacentHTML("beforeend",`
             <div class="column card">
-
-                <img src="https://image.tmdb.org/t/p/w500${value.poster_path}" alt="">
+                <img src="https://image.tmdb.org/t/p/w500${value.poster_path}" alt="${value.id}">
             </div>
         `)
     })  
-    console.log(card)  
+    const carousel = document.querySelector(".carousel")
+    const cardWidth = document.querySelector(".card").getBoundingClientRect().width
+    // console.log(cardWidth, "cardWidth") 
+    const arrow = document.querySelectorAll(".arrow")
+    arrow.forEach((btn)=>{
+        btn.addEventListener("click", ()=>{
+            // console.log(btn.id)
+            carousel.scrollLeft = carousel.scrollLeft + (btn.id === "left" ? -cardWidth*3+8 : + +cardWidth*3 +8)
+            // carousel.scrollLeft = carousel.scrollLeft + cardWidth 
+            // console.log(carousel.scrollLeft, "carousel.scrollLeft")
+  
+        const leftArrow = document.querySelector("#left")
+        const rightArrow = document.querySelector("#right")
+        // console.log(leftArrow, "leftArrow")
+        // console.log(rightArrow, "rightArrow")
+        if(carousel.scrollLeft == 0 ){
+       
+            leftArrow.style.display = "none";          
+
+        }else{
+            // leftArrow.style.backgroundColor = "green";         
+
+            leftArrow.style.display = "block";          
+
+
+        }
+        // if(carousel.scrollLeft + carousel.offsetWidth == carousel.scrollWidth)
+        if(carousel.scrollLeft + carousel.offsetWidth +1 > carousel.scrollWidth){
+            rightArrow.classList.add("hideArrow")
+            // rightArrow.style.backgroundColor = "green";         
+        }else{
+            rightArrow.classList.remove("hideArrow")
+
+        }
+        console.log(carousel.scrollLeft, "+", carousel.offsetWidth , "+ 1", "==", carousel.scrollLeft + carousel.offsetWidth +1, ">", carousel.scrollWidth)
+
+
+    })
+        
+    })
+    // console.log(carousel)  
+
 })
 
-// contentRow ends here 
+// treanding ends here 
