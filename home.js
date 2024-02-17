@@ -57,27 +57,7 @@ slides.forEach((slide, index)=>{
 
 }) 
 
-// prevButton.addEventListener('click', e =>{
-//     const currentSlide = track.querySelector('.current-slide');
-//     const prevSlide = currentSlide.previousElementSibling;
-//     const amountToMove = prevSlide.style.left
-//     console.log(amountToMove, "hello form prev")
 
-//     track.style.transform = 'translateX(-'+amountToMove+')';
-//     currentSlide.classList.remove('current-slide')
-//     prevSlide.classList.add('current-slide')
-// })
-
-// nextButton.addEventListener('click', e =>{
-//     const currentSlide = track.querySelector('.current-slide');
-//     const nextSlide = currentSlide.nextElementSibling;
-//     const amountToMove = nextSlide.style.left
-//     // console.log(amountToMove, "hello form prev")
-
-//     track.style.transform = 'translateX(-'+amountToMove+')';
-//     currentSlide.classList.remove('current-slide')
-//     nextSlide.classList.add('current-slide')
-// })
 
 function autoSlide(){
 
@@ -104,11 +84,11 @@ fetch("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_
 .then(response => response.json())
 .then(data => {
     // console.log(data.results , "contentRow data");
-    const card = document.querySelector(".card-row")
+    const cardRow = document.querySelector(".card-row")
     // console.log(card)  
     
     data.results.map((value, index)=>{
-        card.insertAdjacentHTML("beforeend",`
+        cardRow.insertAdjacentHTML("beforeend",`
             <div class="column card">
                 <img src="https://image.tmdb.org/t/p/w500${value.poster_path}" alt="${value.id}">
             </div>
@@ -148,7 +128,7 @@ fetch("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_
             rightArrow.classList.remove("hideArrow")
 
         }
-        console.log(carousel.scrollLeft, "+", carousel.offsetWidth , "+ 1", "==", carousel.scrollLeft + carousel.offsetWidth +1, ">", carousel.scrollWidth)
+        // console.log(carousel.scrollLeft, "+", carousel.offsetWidth , "+ 1", "==", carousel.scrollLeft + carousel.offsetWidth +1, ">", carousel.scrollWidth)
 
 
     })
@@ -156,6 +136,18 @@ fetch("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_
     })
     // console.log(carousel)  
 
+    let card = document.querySelectorAll(".card")
+    card.forEach((item, index)=>{
+        item.addEventListener("click",()=>{
+            
+        })
+    })
+    console.log(card, "cardSingle is here")
+    // console.log(carousel, "carousel is here")
+
+
+
 })
 
 // treanding ends here 
+
