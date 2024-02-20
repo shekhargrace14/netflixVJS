@@ -90,7 +90,7 @@ fetch("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_
     data.results.map((value, index)=>{
         cardRow.insertAdjacentHTML("beforeend",`
             <div class="column card">
-                <img src="https://image.tmdb.org/t/p/w500${value.poster_path}" alt="${value.id}">
+                <img src="https://image.tmdb.org/t/p/w500${value.backdrop_path}" alt="${value.id}">
             </div>
         `)
     })  
