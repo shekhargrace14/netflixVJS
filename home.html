@@ -63,12 +63,20 @@
             height: 100%;
             object-fit: cover;
         }
+
+
+
+
         .treanding{
             position: relative;
+            overflow: hidden;
+
             /* background-color: red; */
         }
         .treanding .carousel{
-            overflow: hidden;
+            /* overflow: hidden; */
+            overflow-x: hidden;
+            overflow-y: visible;
             scroll-behavior: smooth;
         }
         .hideArrow{
@@ -84,7 +92,7 @@
             border-radius: 50%;
             font-size: 25px;
             font-weight: bold;
-            z-index: 22;
+            z-index: 19;
         }
         .next{
             right: 10px;
@@ -107,6 +115,9 @@
         }
     </style>
     <style>
+        body{
+            /* overflow: hidden; */
+        }
         .card-row{
             /* width: 100%; */
             display: grid;
@@ -114,59 +125,79 @@
             grid-auto-columns: calc((100% / 5) - 12px);
             gap: 8px;
             /* background-color: yellow; */
+        }
 
+        /* .cardMain:hover {
+            position: relative;
+            height: auto;
+            /* overflow: visible; */
+
+        /* } */ */
+        /* .cardMain:hover .card {
+            top: 0;
+            position: absolute;
+        } */
+
+        .cardMain{
+            width: 100%;
+            
         }
         .card{
-            /* width: 500px; */
-            /* width: calc(100% /3); */
-            background-color: green;
-            /* width: 1000px; */
+            position: relative;
+            width: 100%;
             border-radius: var(--border-radius);
+            z-index: 9;
+            margin-top: 3rem;
+
+
+
         }
+
         .card img{
             width: 100%;
-            /* height: 100%; */
             object-fit:cover;
             cursor: pointer;
-
             overflow: hidden;
             border-radius: .3rem .3rem 0 0;
 
         }
-
-        .movies{
-            background-color: red;
-
-        
-        }
-        .movies .cardMain{
-            position: relative;
-        }
-
-        .movies .card{
-            background-color: green !important;
-            position: absolute;
-
-        }
-        .movies .card:hover {
-            bottom: 0;
-        }
-        /* .movies .card:hover .details{
-            display: block;
-        } */
-        .movies .card .details{
+        .card .details{
+            width: 100%;
             /* display: none; */
+            opacity: 0;
             color: white;
-            background-color: blue;
+            /* background-color: var(--bg-gray-hover); */
+            background-color: #00000090;
+            background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.4),rgba(0,0,0,.5), rgba(0,0,0,.6));
             padding: 0 1rem 1rem;
+            position: absolute;
+            bottom: 0;
+            transition: all linear 200ms;
+
         }
-        .movies .card .details ul {
+        .cardMain:hover .details{
+            /* display: block; */
+            opacity: 1;
+
+        }
+        .card .details i {
+            font-size: 1.7rem;
+        }
+
+
+        .card .details ul {
             margin: 1rem 0 0 ;
+            color: white;
         }
+        .card .details ul li {
+            /* margin: 1rem 0 0 ; */
+            color: white;
+        }
+        .movies .card-row{
+            background-color: red;
+            overflow-y: hidden;
 
-
-
-
+        }
     </style>
 </head>
 <body>  
@@ -181,19 +212,21 @@
         <div class="container padding">
             <span id="left" class="arrow prev hideArrow" >&#10094;</span>
             <div class="row card-row carousel">
-                <!-- <h2>hello from contentRow</h2> -->
+
             </div>
             <span id="right" class="arrow next" >&#10095;</span>  
         </div>
     </div>
     <!-- treanding starts here  -->
 
+
+
     <!-- movies starts here  -->
-    <div class="movies">
-        <div class="container padding">
+    <!-- <div class="movies">
+        <div class="container padding"> -->
             <!-- <span id="left" class="arrow prev hideArrow" >&#10094;</span> -->
-            <div class="row card-row ">
-                <div class="column cardMain">
+            <!-- <div class="row card-row ">
+                <div class="column cardMain carousel">
                     <div class="card">
 
                         
@@ -215,98 +248,39 @@
                     </div>
                 </div>
 
-                <div class="column cardMain">
-                    <div class="card">
+                <a href="./singleMoviePage.html">
 
-                        
-                        <img src="./Assets/img1.png" alt="${value.id}">
-                        <div class="details">
-                            <h3>The Northman</h3>
-                            <div class="d-flex justify-between">
-                                <i class="fa-solid fa-circle-play"></i>
-                                <i class="fa-solid fa-thumbs-up"></i>
-                                <i class="fa-solid fa-thumbs-down"></i>
-                                <i class="fa-solid fa-chevron-down"></i>
+                    <div class="column cardMain">
+                        <div class="card">
+                            
+                            
+                            <img src="./Assets/img1.png" alt="${value.id}">
+                            <div class="details">
+                                <h3>The Northman</h3>
+                                <div class="d-flex justify-between">
+                                    <i class="fa-solid fa-circle-play"></i>
+                                    <i class="fa-solid fa-thumbs-up"></i>
+                                    <i class="fa-solid fa-thumbs-down"></i>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </div>
+                                <ul class="d-flex justify-between">
+                                    <li>Action</li>
+                                    <li>Drama</li>
+                                    <li>Adventure</li>
+                                </ul>
                             </div>
-                            <ul class="d-flex justify-between">
-                                <li>Action</li>
-                                <li>Drama</li>
-                                <li>Adventure</li>
-                            </ul>
                         </div>
                     </div>
-                </div>
+                    <h1>Hello Hello</h1>
+                </a>
+                
 
-                <div class="column cardMain">
-                    <div class="card">
 
-                        
-                        <img src="./Assets/img1.png" alt="${value.id}">
-                        <div class="details">
-                            <h3>The Northman</h3>
-                            <div class="d-flex justify-between">
-                                <i class="fa-solid fa-circle-play"></i>
-                                <i class="fa-solid fa-thumbs-up"></i>
-                                <i class="fa-solid fa-thumbs-down"></i>
-                                <i class="fa-solid fa-chevron-down"></i>
-                            </div>
-                            <ul class="d-flex justify-between">
-                                <li>Action</li>
-                                <li>Drama</li>
-                                <li>Adventure</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="column cardMain">
-                    <div class="card">
-
-                        
-                        <img src="./Assets/img1.png" alt="${value.id}">
-                        <div class="details">
-                            <h3>The Northman</h3>
-                            <div class="d-flex justify-between">
-                                <i class="fa-solid fa-circle-play"></i>
-                                <i class="fa-solid fa-thumbs-up"></i>
-                                <i class="fa-solid fa-thumbs-down"></i>
-                                <i class="fa-solid fa-chevron-down"></i>
-                            </div>
-                            <ul class="d-flex justify-between">
-                                <li>Action</li>
-                                <li>Drama</li>
-                                <li>Adventure</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="column cardMain">
-                    <div class="card">
-
-                        
-                        <img src="./Assets/img1.png" alt="${value.id}">
-                        <div class="details">
-                            <h3>The Northman</h3>
-                            <div class="d-flex justify-between">
-                                <i class="fa-solid fa-circle-play"></i>
-                                <i class="fa-solid fa-thumbs-up"></i>
-                                <i class="fa-solid fa-thumbs-down"></i>
-                                <i class="fa-solid fa-chevron-down"></i>
-                            </div>
-                            <ul class="d-flex justify-between">
-                                <li>Action</li>
-                                <li>Drama</li>
-                                <li>Adventure</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
     
-            </div>
+            </div> -->
             <!-- <span id="right" class="arrow next" >&#10095;</span>   -->
-        </div>
-    </div>
+        <!-- </div> -->
+    <!-- </div> -->
     <!-- movies starts here  -->
 
 

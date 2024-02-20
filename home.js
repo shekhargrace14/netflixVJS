@@ -40,9 +40,7 @@ const slideWidth = slides[0].getBoundingClientRect().width;
 // console.log(firstSlide, 'this is first slide')
 
 window.addEventListener("load", () => {
-    firstSlide.classList.add('current-slide');
-
-    
+    firstSlide.classList.add('current-slide'); 
     
 });
 
@@ -56,8 +54,6 @@ slides.forEach((slide, index)=>{
     slide.style.left = slideWidth * index + 'px';
 
 }) 
-
-
 
 function autoSlide(){
 
@@ -74,8 +70,6 @@ function autoSlide(){
 
 setInterval(autoSlide ,2500)
 
-
-
 })
 
 // treanding starts here 
@@ -89,9 +83,30 @@ fetch("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_
     
     data.results.map((value, index)=>{
         cardRow.insertAdjacentHTML("beforeend",`
-            <div class="column card">
-                <img src="https://image.tmdb.org/t/p/w500${value.backdrop_path}" alt="${value.id}">
+
+        <a href="./singleMoviePage.html">    
+            <div class="column cardMain">
+                <div class="card">
+
+                    <img src="https://image.tmdb.org/t/p/w500${value.backdrop_path}" alt="${value.id}">
+
+                    <div class="details">
+                        <h4>${value.title}</h4>
+                        <div class="d-flex justify-between">
+                            <i class="fa-solid fa-circle-play"></i>
+                            <i class="fa-solid fa-thumbs-up"></i>
+                            <i class="fa-solid fa-thumbs-down"></i>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <ul class="d-flex justify-between">
+                            <li>Action</li>
+                            <li>Drama</li>
+                            <li>Adventure</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
+        </a>
         `)
     })  
     const carousel = document.querySelector(".carousel")
@@ -117,8 +132,6 @@ fetch("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_
             // leftArrow.style.backgroundColor = "green";         
 
             leftArrow.style.display = "block";          
-
-
         }
         // if(carousel.scrollLeft + carousel.offsetWidth == carousel.scrollWidth)
         if(carousel.scrollLeft + carousel.offsetWidth +1 > carousel.scrollWidth){
@@ -129,23 +142,25 @@ fetch("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_
 
         }
         // console.log(carousel.scrollLeft, "+", carousel.offsetWidth , "+ 1", "==", carousel.scrollLeft + carousel.offsetWidth +1, ">", carousel.scrollWidth)
-
-
     })
         
     })
     // console.log(carousel)  
 
+
+    // GET ID FROM IMAGE AND SHOW CONTENT IN NEXT PAGE START
+
     let card = document.querySelectorAll(".card")
     card.forEach((item, index)=>{
         item.addEventListener("click",()=>{
-            
+            let imgAlt = item.firstElementChild.alt;
+            localStorage.setItem("imgAlt", imgAlt)
         })
+        // console.log(imgAlt, "cardSingle is here")
     })
-    console.log(card, "cardSingle is here")
     // console.log(carousel, "carousel is here")
 
-
+    // GET ID FROM IMAGE AND SHOW CONTENT IN NEXT PAGE END
 
 })
 
