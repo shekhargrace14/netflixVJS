@@ -170,6 +170,13 @@ ion-icon{
     align-content: space-between ;
 
 }
+
+.flex-nowrap{
+    flex-wrap: nowrap;
+}
+.flex-wrap{
+    flex-wrap: wrap;
+}
 .seprator{
     width: 100%;
     height: .4rem;

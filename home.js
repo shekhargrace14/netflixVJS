@@ -14,7 +14,9 @@ fetch("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_
                     
                     <div class="buttons">
                         <button> <i class="fa-solid fa-play"></i> Play </button>
-                        <button class="gray"> <i class="fa-solid fa-circle-info"></i> Movie Info</button>
+                        <a href="./singleMoviePage.html">
+                            <button class="gray infoBtn" id=${value.id}> <i class="fa-solid fa-circle-info"></i> Movie Info</button>
+                        </a>
                
                     </div>
                 </div>
@@ -26,8 +28,25 @@ fetch("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_
             </div>
         </div>
     `)
+    let infoBtn = document.querySelectorAll(".infoBtn");
+    infoBtn.forEach((item)=>{
+        item.addEventListener("click", ()=>{
+
+            let imgAlt = item.id
+            localStorage.setItem("imgAlt", imgAlt)
+            console.log(item.id, " =", imgAlt)
+            // console.log(imgAlt)
+
+
+        })
     })
-    // console.log(heroCarousel)
+
+
+   
+    // console.log(infoBtn);
+    
+
+})
 
 const track = document.querySelector('.heroSlider');
 const slides = Array.from(track.children)
@@ -87,9 +106,7 @@ fetch("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_
         <a href="./singleMoviePage.html">    
             <div class="column cardMain">
                 <div class="card">
-
                     <img src="https://image.tmdb.org/t/p/w500${value.backdrop_path}" alt="${value.id}">
-
                     <div class="details">
                         <h4>${value.title}</h4>
                         <div class="d-flex justify-between">

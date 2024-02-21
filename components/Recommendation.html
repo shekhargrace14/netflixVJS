@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendation</title>
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        .cardMain{
+            width: 100%;
+            background-color: red !important;
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: calc((100% / 5) - 12px);
+            gap: 8px;
+
+            
+        }
+        .card{
+            position: relative;
+            width: 100%;
+            border-radius: var(--border-radius);
+            z-index: 9;
+            margin-top: 3rem;
+
+
+
+        }
+
+        .card img{
+            width: 100%;
+            object-fit:cover;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: .3rem .3rem 0 0;
+
+        }
+        .card .details{
+            width: 100%;
+            /* display: none; */
+            opacity: 0;
+            color: white;
+            /* background-color: var(--bg-gray-hover); */
+            background-color: #00000090;
+            background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.4),rgba(0,0,0,.5), rgba(0,0,0,.6));
+            padding: 0 1rem 1rem;
+            position: absolute;
+            bottom: 0;
+            transition: all linear 200ms;
+
+        }
+        .cardMain:hover .details{
+            /* display: block; */
+            opacity: 1;
+
+        }
+        .card .details i {
+            font-size: 1.7rem;
+        }
+
+
+        .card .details ul {
+            margin: 1rem 0 0 ;
+            color: white;
+        }
+        .card .details ul li {
+            /* margin: 1rem 0 0 ; */
+            color: white;
+        }
+        .movies .card-row{
+            background-color: red;
+            overflow-y: hidden;
+
+        }
+    </style>
+</head>
+<body>
+
+    <div class="recommendation container">
+        <div class="row cardMain">
+
+        </div>
+    </div>
+
+    <script>
+        fetch("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_key=185c7d1fa7ff15b5023522fae491e666")
+        .then((response)=>response.json())
+        .then((data)=>{
+            console.log(data, "data from recommendation")
+
+            const cardMain = document.querySelector(".cardMain")
+            data.results.map((value, index)=>{
+                cardMain.insertAdjacentHTML("beforeend",`
+                    <div class=" column card">
+    
+                        <img src="https://image.tmdb.org/t/p/w500${value.backdrop_path}" alt="${value.id}">
+
+                        <div class="details">
+                            <h4>${value.title}</h4>
+                            <div class="d-flex justify-between">
+                                <i class="fa-solid fa-circle-play"></i>
+                                <i class="fa-solid fa-thumbs-up"></i>
+                                <i class="fa-solid fa-thumbs-down"></i>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <ul class="d-flex justify-between">
+                                <li>Action</li>
+                                <li>Drama</li>
+                                <li>Adventure</li>
+                            </ul>
+                        </div>
+                    </div>
+                `)
+
+            })
+        })
+    </script>
+
+</body>
+</html>
