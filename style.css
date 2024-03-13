@@ -422,7 +422,11 @@ ion-icon{
 /* footer starts here  */
 
 footer{
-    /* padding: 5%; */
+    width: 100%;
+    /* background-color: red; */
+    /* position: absolute; */
+    /* bottom: 0rem; */
+    
 }
 footer p{
     margin-bottom: 1.5rem;
