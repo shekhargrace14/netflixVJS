@@ -19,6 +19,10 @@
     --text-secondary-color: #737373;
 }
 
+html{
+    font-size: 10px;
+}
+
 body{
     background-color: var(--bg-dark-primary);
 }
@@ -37,7 +41,7 @@ button , .button{
     margin-right: 1rem;
     cursor: pointer;
     transition: all ease-in-out 200ms;
-    font-size: 16px;
+    font-size: 1.6rem;
     font-weight: 400;
     border: none;
 }
@@ -68,19 +72,19 @@ h1, h2, h3, h4, h5, h6{
     margin: .5rem 0;
 }
 h1{
-    font-size: 40px;   
+    font-size: 4rem;   
 }
 h2{
-     font-size: 35px;
+     font-size: 3rem;
 }
 h3{
-    font-size: 28px;
+    font-size: 2.8rem;
 }
 h4{
-    font-size: 18px;
+    font-size: 2.2rem;
 }
 p{
-    font-size: 16px;
+    font-size: 1.6rem;
     font-family: var(--font-secondary);
     line-height: 1.8rem;
     color: var(--text-primary-color);
@@ -111,7 +115,7 @@ ion-icon{
     color: var(--text-primary-color);
 }
 .subTitle{
-    font-size: 24px;
+    font-size: 2.4rem;
     line-height: 2rem;
 
 }
@@ -119,6 +123,10 @@ ion-icon{
     max-width: 1280px;
     width: 95%;
     border-radius: 10px;
+    margin: 0 auto;
+}
+.container-xxl{
+    max-width: 1400px;
     margin: 0 auto;
 
 }
@@ -277,18 +285,18 @@ ion-icon{
     border: 1px solid gray;
     outline: none;
     border-radius: var(--border-radius);
-    font-size: 1rem;
+    font-size: 1.6rem;
     font-weight: 600;
 }
 
 .banner  button{
     padding: .8rem 1rem;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
 
 
 }
 .banner button span{
-    font-size: 2rem;
+    font-size: 3.2rem;
     font-weight: 100;
 }
 
@@ -395,18 +403,18 @@ ion-icon{
     border: 1px solid gray;
     outline: none;
     border-radius: var(--border-radius);
-    font-size: 1rem;
+    font-size: 1.6rem;
     font-weight: 600;
 }
 
 .membership button{
     padding: .8rem 1rem;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
 
 
 }
 .membership button span{
-    font-size: 2rem;
+    font-size: 3.2rem;
     font-weight: 100;
 }
 
@@ -429,7 +437,7 @@ footer p{
 
 footer li{
     color: var(--secondary-text-color) !important; 
-    font-size: 14px;
+    font-size: 1.6rem;
     margin-bottom: 1rem;
 
 }

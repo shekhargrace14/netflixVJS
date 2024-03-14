@@ -8,8 +8,8 @@ fetch("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_
         data.results.map((value) => {
             heroSlider.insertAdjacentHTML("beforeend", `
         <div class="column ">
-            <div class="info d-flex align-center" >
-                <div class="info-box">
+            <div class=" container info d-flex align-center" >
+                <div class="info-box ">
                     <h1>${value.original_title}</h1>
                     <p>${value.overview}</p>
                     
@@ -28,7 +28,7 @@ fetch("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_
 
             </div>
         </div>
-    `)
+        `)
             let infoBtn = document.querySelectorAll(".infoBtn");
             infoBtn.forEach((item) => {
                 item.addEventListener("click", () => {
