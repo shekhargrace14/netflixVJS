@@ -15,6 +15,10 @@ fetch("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_
         return myListItemsArray.includes(element.id.toString())
 
     })
+    
+    function cardRowCreation(){
+
+  
     let cardRow = document.querySelector(".cardRow")
     // console.log(cardRow, "cardRow");
     myListMatchedItems.map((items)=>{
@@ -44,7 +48,8 @@ fetch("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_
         </div>`)
        
     })
-    
+    }
+    cardRowCreation()
     let removeFromMyListBtn =  document.querySelectorAll(".removeFromMyListBtn")
     // console.log(removeFromMyListBtn, "removeFromMyListBtn")
     removeFromMyListBtn.forEach((item)=>{
@@ -61,8 +66,11 @@ fetch("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_
 
             localStorage.setItem("myListItemsArray", JSON.stringify(myListAfterDeletingItem))
 
-            let cardRow = document.querySelector("cardRow")
-            cardRow.remove()
+            
+            let cardRow = document.querySelector(".cardRow")
+            cardRow.innerHTML = ' ';
+            
+            cardRowCreation()
 
             // myListItemsArray = 
             // myListItemsArray.reomve(item.id)
