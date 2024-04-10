@@ -26,7 +26,7 @@ async function renderData(){
   data.map((value)=>{
     card+=`<div class="row faqrow" id="faq">
           <div class="column que d-flex justify-between align-center">
-              <h3>${value.ques}</h3>
+              <p class="QuesText">${value.ques}</p>
               <div class="div">
                   <ion-icon name="add-outline"></ion-icon>
               </div>

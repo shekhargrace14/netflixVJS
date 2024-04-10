@@ -98,12 +98,12 @@ fetch("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_
     .then(response => response.json())
     .then(data => {
         // console.log(data.results , "contentRow data");
-        const cardRow = document.querySelector(".card-row")
+        const carousel1 = document.querySelector(".carousel1")
         // console.log(card)  
 
         data.results.map((value, index) => {
 
-            cardRow.insertAdjacentHTML("beforeend", `
+            carousel1.insertAdjacentHTML("beforeend", `
         
         <div class="column cardMain">
             <a href="./singleMoviePage.html">    

@@ -13,6 +13,8 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <style>
         .home-hero{
             height: 90vh;
@@ -68,7 +70,7 @@
 
 
         .treanding{
-            position: relative;
+            /* position: relative; */
             overflow: hidden;
 
             /* background-color: red; */
@@ -79,27 +81,58 @@
             overflow-y: visible;
             scroll-behavior: smooth;
         }
-        .hideArrow{
-            display: none;
+        
+    </style>
+    <style>
+
+        /* carousel starts here  */
+        .carouselDiv{
+            background-color: yellow;
+            position: relative;
+            
         }
+        .carousel{
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: calc((100% / 4) - 12px);
+            gap: 8px;
+            overflow-x: hidden;
+            overflow-y: visible;
+            scroll-behavior: smooth;
+        }
+
+
+        /* arrow starts here  */
+        .arrowRow{
+            background-color: red;
+            /* height: 30vh; */
+            height: 100%;
+            top: 0;
+        }
+        /* arrow ends here  */
         .arrow{
-            cursor: pointer;
             position: absolute;
-            top: 45%;
-            color:black;
-            background-color: rgba(255, 255, 255, 0.767);
+            top: 0;
+            cursor: pointer;
+            width: 2rem;
+            height: 100%;
+            color:white;
+            background-color: rgba(29, 28, 28, 0.767);
             padding: 8px 18px;
-            border-radius: 50%;
             font-size: 25px;
-            font-weight: bold;
+            font-weight: thin;
             z-index: 19;
         }
         .next{
-            right: 10px;
+            right: 0px;
         
         }
         .prev{
-            left:10px;
+            left:0px;
+        }
+
+        .hideArrow{
+            /* display: none; */
         }
 
         .buttons button {
@@ -113,8 +146,7 @@
             color: white;
 
         }
-    </style>
-    <style>
+        /* carousel ends here  */
         body{
             /* overflow: hidden; */
         }
@@ -122,7 +154,7 @@
             /* width: 100%; */
             display: grid;
             grid-auto-flow: column;
-            grid-auto-columns: calc((100% / 5) - 12px);
+            grid-auto-columns: calc((100% / 3) - 12px);
             gap: 8px;
             /* background-color: yellow; */
         }
@@ -147,10 +179,6 @@
             width: 100%;
             border-radius: var(--border-radius);
             z-index: 9;
-            margin-top: 3rem;
-
-
-
         }
 
         .card img{
@@ -203,89 +231,63 @@
 </head>
 <body>  
     
-    <div class="container-fluid home-hero"> 
+    <div class="container-xxl home-hero"> 
         <header></header>
         <div class="row heroSlider"></div>  
     </div>
 
-
-    
-
-    <!-- treanding starts here  -->
-    <div class="treanding">
-        <div class="container padding">
-            <span id="left" class="arrow prev hideArrow" >&#10094;</span>
-            <div class="row card-row carousel">
-
+    <!-- carousel carousel1 start -->
+    <div class=" container-fluid  padding">
+        <div class="carouselDiv">
+            <div class="row ">
+                <div class=" carousel carousel1">
+                    
+                </div>
             </div>
-            <span id="right" class="arrow next" >&#10095;</span>  
-        </div>
-    </div>
-    <!-- treanding starts here  -->
-
-
-
-    <!-- movies starts here  -->
-    <!-- <div class="movies">
-        <div class="container padding"> -->
-            <!-- <span id="left" class="arrow prev hideArrow" >&#10094;</span> -->
-            <!-- <div class="row card-row ">
-                <div class="column cardMain carousel">
-                    <div class="card">
-
-                        
-                        <img src="./Assets/img1.png" alt="${value.id}">
-                        <div class="details">
-                            <h3>The Northman</h3>
-                            <div class="d-flex justify-between">
-                                <i class="fa-solid fa-circle-play"></i>
-                                <i class="fa-solid fa-thumbs-up"></i>
-                                <i class="fa-solid fa-thumbs-down"></i>
-                                <i class="fa-solid fa-chevron-down"></i>
-                            </div>
-                            <ul class="d-flex justify-between">
-                                <li>Action</li>
-                                <li>Drama</li>
-                                <li>Adventure</li>
-                            </ul>
-                        </div>
+            <div class="arrowRow d-flex justify-between align-center">
+                <div id="left"  >
+                    <div id="left" class="arrow prev hideArrow d-flex justify-center align-center">
+                        &#10094;
+                        <!-- <ion-icon name="chevron-back"></ion-icon> -->
                     </div>
                 </div>
-
-                <a href="./singleMoviePage.html">
-
-                    <div class="column cardMain">
-                        <div class="card">
-                            
-                            
-                            <img src="./Assets/img1.png" alt="${value.id}">
-                            <div class="details">
-                                <h3>The Northman</h3>
-                                <div class="d-flex justify-between">
-                                    <i class="fa-solid fa-circle-play"></i>
-                                    <i class="fa-solid fa-thumbs-up"></i>
-                                    <i class="fa-solid fa-thumbs-down"></i>
-                                    <i class="fa-solid fa-chevron-down"></i>
-                                </div>
-                                <ul class="d-flex justify-between">
-                                    <li>Action</li>
-                                    <li>Drama</li>
-                                    <li>Adventure</li>
-                                </ul>
-                            </div>
-                        </div>
+                <div></div>
+                <div id="right" >
+                    <div id="right" class="arrow next d-flex justify-center align-center" >
+                        &#10095;
+                        <!-- <ion-icon name="chevron-forward"></ion-icon> -->
                     </div>
-                    <h1>Hello Hello</h1>
-                </a>
-                
+                </div>
+            </div>
+        </div>  
 
-
+    </div>
+    <!-- carousel carousel1 end-->
     
-            </div> -->
-            <!-- <span id="right" class="arrow next" >&#10095;</span>   -->
-        <!-- </div> -->
-    <!-- </div> -->
-    <!-- movies starts here  -->
+
+    <!-- treanding starts here  -->
+    <!-- <div class="treanding">
+        <div class="container padding">
+            <div class="row cardRowMain  ">
+                <div class="card-row carousel"></div>
+                
+                <div class="arrowRow d-flex justify-between align-center">
+                    <div id="left" class="arrow prev hideArrow d-flex justify-between align-center" >
+                        &#10094;
+                    </div>
+                    <div></div>
+                    <div id="right" class="arrow next d-flex justify-between align-center" >
+                        &#10095;
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div> -->
+    <!-- treanding starts here  -->
+
+
+
+
     <a href="./singleMoviePage.html"></a>
 
 
