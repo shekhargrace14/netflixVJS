@@ -7,66 +7,236 @@
     <link rel="stylesheet" href="./style.css">
 
     <style>
-
-        .movieHero{
-            margin-bottom: 2rem;
-            /* background-color: green !important; */
+        /* carousel starts here  */
+        .carouselDiv{
+            background-color: yellow;
             position: relative;
+            
         }
-        .container{
-            margin-bottom: 5rem;
+        .carousel{
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: calc((100% / 4) - 12px);
+            gap: 8px;
+            overflow-x: hidden;
+            overflow-y: visible;
+            scroll-behavior: smooth;
         }
-        .details{
-            position: absolute;
-            height: 100%;    
-            z-index: 1;
-        }
-        .containerXxl{
 
-            /* background-color: red !important; */
+        /* carousel ends here  */
+
+        /* arrow starts here  */
+        .arrowRow{
+            background-color: red;
+            /* height: 30vh; */
+            height: 100%;
+            top: 0;
         }
-        .background{
-            /* height: 70vh;     */
-            /* position: absolute; */
-            /* top: 0; */
-            /* margin-left: 0; */
-            /* z-index: 0; */
-            /* width: 100%; */
-            max-height: 80vh;
+
+        .arrow{
+            position: absolute;
+            top: 0;
+            cursor: pointer;
+            width: 2rem;
+            height: 100%;
+            color:white;
+            background-color: rgba(29, 28, 28, 0.767);
+            padding: 8px 18px;
+            font-size: 25px;
+            font-weight: thin;
+            z-index: 19;
+        }
+        .next{
+            right: 0px;
+        
+        }
+        .prev{
+            left:0px;
+        }
+
+        .hideArrow{
+            /* display: none; */
+        }
+
+        /* arrow ends here  */
+        /* card starts here  */
+        .cardMain{
+            width: 100%;
+            
+        }
+        .card{
+            position: relative;
+            width: 100%;
+            border-radius: var(--border-radius);
+            z-index: 9;
+        }
+
+        .card img{
+            width: 100%;
+            object-fit:cover;
+            cursor: pointer;
             overflow: hidden;
+            border-radius: .3rem .3rem 0 0;
+
         }
-        .background img{
-            /* width: 100%; */
-            /* height: 100%; */
+        .card .details{
+            width: 100%;
+            /* display: none; */
+            opacity: 0;
+            color: white;
+            /* background-color: var(--bg-gray-hover); */
+            background-color: #00000090;
+            background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.4),rgba(0,0,0,.5), rgba(0,0,0,.6));
+            padding: 0 1rem 1rem;
+            position: absolute;
+            bottom: 0;
+            transition: all linear 200ms;
+
         }
+        .cardMain:hover .details{
+            /* display: block; */
+            opacity: 1;
+
+        }
+        .card .details i {
+            font-size: 1.7rem;
+            cursor: pointer;
+        }
+
+
+        .card .details ul {
+            margin: 1rem 0 0 ;
+            color: white;
+        }
+        .card .details ul li {
+            /* margin: 1rem 0 0 ; */
+            color: white;
+        }
+        .movies .card-row{
+            background-color: red;
+            overflow-y: hidden;
+
+        }
+        /* card ends here  */
+
     </style>
 
 
 </head>
 <body>
     
+    <header></header>
 
-    <div class="movieHero">
-        <header></header>
-        <div class="container">
-            <div class="row details d-flex align-center">
-                <div class="column">
-                    <h1>Lorem ipsum dolor sit amet.</h1>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores quaerat dolorum voluptates obcaecati quod tempore?</p>
-                    <button>Hello</button>
-                </div>
-            </div> 
-        </div>
-        
-        <div class="containerXxl background">
-            <div class="row d-flex justify-center ">
-                <div class="column">
-                    <img src="./Assets/welcome-hero.jpg" alt="">
+    <!-- carousel carousel1 start -->
+    <div class=" container-fluid  padding 2">
+        <div class="carouselDiv">
+            <div class="row ">
+                <div class=" carousel carousel1">
+                    
                 </div>
             </div>
-        </div>             
+            <div class="arrowRow d-flex justify-between align-center">
+                <div id="left"  >
+                    <div id="left" class="arrow prev hideArrow d-flex justify-center align-center">
+                        &#10094;
+                        <!-- <ion-icon name="chevron-back"></ion-icon> -->
+                    </div>
+                </div>
+                <div></div>
+                <div id="right" >
+                    <div id="right" class="arrow next d-flex justify-center align-center" >
+                        &#10095;
+                        <!-- <ion-icon name="chevron-forward"></ion-icon> -->
+                    </div>
+                </div>
+            </div>
+        </div>  
+
     </div>
-   
+    <!-- carousel carousel1 end-->
+        <!-- carousel carousel2 start -->
+        <div class=" container-fluid  padding 2">
+            <div class="carouselDiv">
+                <div class="row ">
+                    <div class=" carousel carousel2">
+                        
+                    </div>
+                </div>
+                <div class="arrowRow d-flex justify-between align-center">
+                    <div id="left"  >
+                        <div id="left" class="arrow prev hideArrow d-flex justify-center align-center">
+                            &#10094;
+                            <!-- <ion-icon name="chevron-back"></ion-icon> -->
+                        </div>
+                    </div>
+                    <div></div>
+                    <div id="right" >
+                        <div id="right" class="arrow next d-flex justify-center align-center" >
+                            &#10095;
+                            <!-- <ion-icon name="chevron-forward"></ion-icon> -->
+                        </div>
+                    </div>
+                </div>
+            </div>  
+    
+        </div>
+        <!-- carousel carousel2 end-->
+
+        
+    <!-- carousel carouse3 start -->
+    <div class=" container-fluid  padding 2">
+        <div class="carouselDiv">
+            <div class="row ">
+                <div class=" carousel carousel3">
+                    
+                </div>
+            </div>
+            <div class="arrowRow d-flex justify-between align-center">
+                <div id="left"  >
+                    <div id="left" class="arrow prev hideArrow d-flex justify-center align-center">
+                        &#10094;
+                        <!-- <ion-icon name="chevron-back"></ion-icon> -->
+                    </div>
+                </div>
+                <div></div>
+                <div id="right" >
+                    <div id="right" class="arrow next d-flex justify-center align-center" >
+                        &#10095;
+                        <!-- <ion-icon name="chevron-forward"></ion-icon> -->
+                    </div>
+                </div>
+            </div>
+        </div>  
+
+    </div>
+    <!-- carousel carousel3 end-->
+    <!-- carousel carousel4 start -->
+    <div class=" container-fluid  padding 2">
+        <div class="carouselDiv">
+            <div class="row ">
+                <div class=" carousel carousel4">
+                    
+                </div>
+            </div>
+            <div class="arrowRow d-flex justify-between align-center">
+                <div id="left"  >
+                    <div id="left" class="arrow prev hideArrow d-flex justify-center align-center">
+                        &#10094;
+                        <!-- <ion-icon name="chevron-back"></ion-icon> -->
+                    </div>
+                </div>
+                <div></div>
+                <div id="right" >
+                    <div id="right" class="arrow next d-flex justify-center align-center" >
+                        &#10095;
+                        <!-- <ion-icon name="chevron-forward"></ion-icon> -->
+                    </div>
+                </div>
+            </div>
+        </div>  
+
+    </div>
+    <!-- carousel carousel4 end-->
         
         
     <footer></footer>
