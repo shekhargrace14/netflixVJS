@@ -1,8 +1,11 @@
-fetch("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_key=185c7d1fa7ff15b5023522fae491e666")
+let targetedApi = localStorage.getItem("targetedApi")
+const imageId = localStorage.getItem("imageId")
+console.log(imageId,targetedApi)
+
+fetch(targetedApi)
 .then(response=> response.json())
 .then(data=>{
-    const imgAlt = localStorage.getItem("imgAlt")
-    // console.log(imgAlt)
+    console.log(data.results)
 
 
     // console.log(data)
@@ -11,7 +14,7 @@ fetch("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_
     //     item.id.toString() == imgAlt;
     // });
     const matchID = data.results.find((item) => {
-        return item.id.toString() === imgAlt;
+        return item.id.toString() === imageId;
     });
     
     // const matchID = data.results.find((item) => item.id.toString() === imgAlt);
@@ -73,7 +76,6 @@ fetch("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_
         // console.log(localStorage.setItem("AddToMyListItems",JSON.stringify(getAddToMyListItems)))       
     })  
     // addToMyList ends here 
-
 })
 
 
