@@ -196,3 +196,10 @@ fetch("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_
 // treanding ends here 
 
 // =========================x===============================
+
+// search starts here 
+import { submit, search } from "../components/header.js";
+
+console.log(search)
+console.log(submit)
+// search ends here 
