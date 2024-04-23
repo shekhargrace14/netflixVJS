@@ -198,8 +198,16 @@ fetch("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_
 // =========================x===============================
 
 // search starts here 
-import { submit, search } from "../components/header.js";
-
+let search = document.querySelector("#search")
+let input = document.querySelector("#input")
+let submit = document.querySelector("#submit")
 console.log(search)
 console.log(submit)
+search.addEventListener("submit",(e)=>{
+    let inputValue = input.value
+    console.log(inputValue)
+    e.preventDefault();
+    localStorage.setItem("searchItem", inputValue)
+    
+})
 // search ends here 
